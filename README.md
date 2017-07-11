@@ -1,10 +1,5 @@
 # Simon-Game
 
-
-[screenshot]
-
-## What is [name of game]?
-
 The object of the game is to repeat a randomly generated pattern by clicking on
 the same divs shown briefly and then hidden. The pattern complexity should increase and the player will try to accumulate the highest score possible until they fail.
 
@@ -25,7 +20,7 @@ alerted and the game is over. Game can be reset with reset button.
 
 ### Notes on Game Structure
 
-I think the randomization may be difficult. 
+I think the randomization may be difficult.
 
 ## Opportunities for Future Growth
 

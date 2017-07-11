@@ -10,7 +10,7 @@ one item.
 
 ## Wireframe
 
-![alt text](/Simon-Game/IMG_0838.JPG)
+![alt text](Simon-Game/IMG_0838.JPG)
 
 ## Initial thoughts on game structure
 

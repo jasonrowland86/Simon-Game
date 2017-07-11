@@ -1,4 +1,4 @@
-*** Name / Date ***
+Jason Rowland 7-11-2017
 
 # Simon-Game Proposal
 
@@ -10,7 +10,7 @@ one item.
 
 ## Wireframe
 
-![alt text](Simon-Game/IMG_0838.JPG)
+![img_0838](https://user-images.githubusercontent.com/27818966/28086140-fdcf272a-664b-11e7-8a93-b580487653f8.JPG)
 
 ## Initial thoughts on game structure
 

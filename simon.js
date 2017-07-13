@@ -3,75 +3,113 @@ $(function() {
 
 //Variables
 let playerArr = [];
-let computerArr = ['box1', 'box2', 'box3', 'box4'];
+let computerArr = [];
 let boxes = document.getElementsByClassName('box');
 let container = document.getElementById('container');
-//Create board
+let level = 1;
+let score = 0;
+let turn = 1;
 
-function createGameBoard1() {
+//Create board
+function createGameBoard() {
   for(let i = 1; i <= 4; i++){
      let newDiv = document.createElement('div');
-     newDiv.id = 'box'+i;
-     newDiv.className = 'box';
+     newDiv.id = i;
+     newDiv.className = 'box box'+i;
      container.appendChild(newDiv);
   }
     document.getElementById('h1').innerText = "SIMON";
+    document.getElementById('start').innerText = "START";
+    document.getElementById('start').addEventListener('click', playGame());
+    generateRandomSequence()
 }
-createGameBoard1()
+createGameBoard()
 
-//Event listener  should go in computerTurn function
+function generateRandomSequence() {
+  for(let i = 0; i < level; i++) {
+    computerArr.push(Math.floor((Math.random() * 4) + 1));
+  }
+  console.log(computerArr);
+}
 
+//function that runs Game
+function playGame() {
+  if(turn === 1){
+    for(let i=0; i<boxes.length; i++) {
+      boxes[i].removeEventListener('click', playerTurn);
+    }
+    computerTurn();
+  } else {
+    for(let i=0; i<boxes.length; i++) {
+      boxes[i].addEventListener('click', playerTurn);
+    }
+  }
+  //need turn to end when arr lengths and arr orders match
+    turn = 0;
+    //select 1 index from computerArr and add back to computerArr
+}
 
 //Computer turn
 function computerTurn() {
-  //shuffle the computer turn array += computerTurnArr + 1 id to array each time called
-  //animate the divs to flip to a color in order of that array
-  //set an interval to display colored divs for an amount of seconds
-  //animate the divs to flip back to black
-  //then alternate to playerTurn
+  //call div animation function to display current computerArr
 }
 
 //Player turn
 function playerTurn() {
-    //on click change class
-    //push this id to playerArr
-    //if playerArr.length === computerArr.length then check if correct
-    if (checkPlayerTurn(playerTurn)){
-      	//if playerArr is correct then computers turn
-        //remove all event listeners from boxes
+    //on click change class and animate
+    playerArr.push(this.getAttribute('id'));
+    if (checkPlayerTurn()){
+        //select 1 index from computerArr and add back to computerArr
       } else {
         //animate board to shake
-        //Alert Game Over
-        //Display Final Score and store it on local storage
-        //update a divs innerHTML to add playAgain button
-        .innerHTML = '<button id = button>Play Again<button>';
+        document.getElementById('h1').innerText = 'GAME OVER'
+        document.getElementById('score').innerText = `Final ${score}`;
+        document.getElementById('start').innerHTML =
+        '<button id = button>Play Again<button>';
+        document.getElementById("start").onclick = function() {createGameBoard()};
       }
+      level++;
+      score + 10;
 }
 //Check player turn
 function checkPlayerTurn() {
-    //compare playerArr to computerArr
+    _.isEqual(playerArr, computerArr);
+}
+ for(let i = 0; i < this.length; i++) {
+        if(this[i] !== this[0]) {
+            return false;
+        } else {
+          return true;
+        }
+}
+//Score multiplier
+function multiplyScore() {
+
 }
 
 //Play again
-document.getElementById("button").onclick = function() {playAgain()};
-
 function playAgain() {
   container.innerHTML = '';
   playerArr = [];
   computerArr = []; //might not need this line if arr is updated in computer turn function
+  //possibly set time out to fix reload bug
   createGameBoard1();
 }
 
-//Animation to flip box when clicked
-function flipBox() {
-  //change a css class
-  //add flip animation
+//Animations
+function animateComputerArr(n) {
+     light(array[i]);
+     setTimeout(function() {
+       i++; if (n>1) { animation_loop(n-1); } }, 800);
+
+  //will include a flash done with css opacity change
 }
+function light() {
 
-
-
-
-
+}
+function shakeGameBoard() {
+  //animation to shake game board on game over
+}
 
 
 

@@ -1,6 +1,7 @@
 body {
   box-sizing: border-box;
   text-align: center;
+  background-color: black;
 }
 hr {
   width: 480px;
@@ -18,33 +19,72 @@ button {
   outline: none;
 }
 button:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   cursor: pointer;
 }
 footer {
-  height: 65px;
-  background-color: black;
-}
+  }
 #h1 {
   font-family: 'Work Sans', sans-serif;
   font-size: 40px;
   text-align: center;
+  padding: 10px;
+  color: white;
 }
 #container {
+  display: flex;
+  flex-wrap: wrap;
   display: block;
-  background-color: white;
-  width: 680px;
+  background-color: black;
+  width: auto;
   margin: auto;
-  padding-left: 0px;
 }
-
+#wrapper {
+  width: 500px;
+  margin: auto;
+}
+#start {
+  display: inline-block;
+  margin: 10px auto;
+  height: 30px;
+  width: 100px;
+  border: none;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  padding-top: 8px;
+}
+#score {
+  display: inline-block;
+  margin: 10px 50px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  padding-top: 8px;
+}
+#level {
+  display: inline-block;
+  margin: 10px 50px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  padding-top: 8px;
+}
+.inputs:hover {
+  cursor: pointer;
+}
 /*--- SIMON Boxes ---*/
 .box {
-  width: 250px;
-  height: 250px;
-  background-color: black;
-  border: 5px solid white;
+  width: 225px;
+  height: 225px;
+  border: 5px solid black;
   display: inline-block;
   overflow: hidden;
   margin: 0 auto;
@@ -52,17 +92,22 @@ footer {
 }
 .box:hover {
   cursor: pointer;
+  opacity: 1.0;
 /* possibly add an animation */
 }
-#box1 {
+.box1 {
   background-color: #FF5EF5;
+  opacity: .6;
 }
-#box2 {
+.box2 {
   background-color: #52E3FF;
+  opacity: .6;
 }
-#box3 {
+.box3 {
   background-color: #E7FF6D;
+  opacity: .6;
 }
-#box4 {
+.box4 {
   background-color: #5EFF76;
+  opacity: .6;
 }

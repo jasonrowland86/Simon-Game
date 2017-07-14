@@ -37,6 +37,8 @@ function createGameBoard() {
   }
     document.getElementById('h1').innerText = "SIMON";
     document.getElementById('start').innerText = "START";
+    document.getElementById('level').innerText = "Level";
+    document.getElementById('score').innerText = "Score";
     document.getElementById('start').addEventListener('click', playGame);
 }
 createGameBoard()
@@ -49,9 +51,10 @@ function playGame() {
 }
 
 function computerTurn() {
+    document.getElementById('level').innerText = `Level ${level}`;
     computerArr.push(Math.floor((Math.random() * 4) + 1));
     console.log(computerArr);
-    // computerArr.forEach(animateSequence);
+    animateSequence();
     playerTurn();
 }
 
@@ -66,11 +69,14 @@ function playerMove() {
   console.log(playerArr);
   if(checkPlayerTurn() === true && playerArr.length === computerArr.length) {
     playerArr = [];
-    computerTurn();
+    level++;
+    score += 10;
+    document.getElementById('score').innerText = `Score ${score}`;
+    setTimeout(computerTurn, 1000);
   } else if(checkPlayerTurn() === false) {
     //animate board to shake on error
-    document.getElementById('h1').innerText = 'GAME OVER'
-    document.getElementById('score').innerText = `Final ${score}`;
+    document.getElementById('h1').innerText = 'GAME OVER';
+    document.getElementById('score').innerText = `Final score ${score}`;
     document.getElementById('start').innerHTML = 'Play Again';
   }
 }
@@ -88,15 +94,17 @@ function reset() {
   //possibly set time out to fix reload bug
   createGameBoard();
 }
-  //Enable user interaction with the board, and register any clicks on the Simon divs
 
-  //While the player has not entered an incorrect response, and the number of clicks
-  //is less than the length of the sequence, wait for player input
-
-//continue adding round until player fails
-
-  //alert GAME OVER
-  //add restart button
-
+function animateSequence() {
+  let timeOut = 1250;
+  computerArr.forEach(function(e){
+    let box = document.getElementById(e);
+    box.classList.add('light');
+    setTimeout(function(){
+      box.classList.remove('light');
+      timeOut += 1000;
+    }, timeOut)
+  })
+}
 
 });

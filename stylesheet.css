@@ -69,6 +69,7 @@ footer {
   font-family: 'Work Sans', sans-serif;
   font-size: 20px;
   padding-top: 8px;
+  font-weight: 100;
 }
 #level {
   display: inline-block;
@@ -80,6 +81,7 @@ footer {
   font-family: 'Work Sans', sans-serif;
   font-size: 20px;
   padding-top: 8px;
+  font-weight: 100;
 }
 
 /*--- SIMON Boxes ---*/
@@ -112,4 +114,13 @@ footer {
 .box4 {
   background-color: #5EFF76;
   opacity: .6;
+}
+
+.light {
+  animation: light .5s linear;
+}
+
+@keyframes light {
+  0% 100%{opacity: .6;}
+  50% {opacity: 1;}
 }

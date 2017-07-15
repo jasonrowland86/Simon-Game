@@ -1,6 +1,6 @@
 $(function() {
     console.log( "test" );
-//give credit from stackoverflow
+//give credit from stackoverflow for array equals prototype function
 //https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
 Array.prototype.equals = function (array) {
 
@@ -62,6 +62,7 @@ function computerTurn() {
 function playerTurn() {
   for(let i=0; i<boxes.length; i++) {
     boxes[i].addEventListener('click', playerMove);
+    boxes[i].addEventListener('click', lightUp);
   }
 }
 
@@ -75,8 +76,8 @@ function playerMove() {
     document.getElementById('score').innerText = `Score ${score}`;
     setTimeout(computerTurn, 1000);
   } else if(checkPlayerTurn() === false) {
-    //animate board to shake on error
-    document.getElementById('h1').innerText = 'GAME OVER';
+    gameOver(); //animates board to shake
+    document.getElementById('wrapper').innerHTML += '<p id=p>GAME</br>OVER</p>';
     document.getElementById('score').innerText = `Final score ${score}`;
     document.getElementById('start').innerHTML = 'Play Again';
   }
@@ -89,6 +90,9 @@ function checkPlayerTurn() {
 }
 
 function reset() {
+  let wrapper = document.getElementById('wrapper');
+  let child = document.getElementById('p');
+  wrapper.removeChild(child);
   container.innerHTML = '';
   playerArr = [];
   computerArr = [];
@@ -112,6 +116,19 @@ function animateSequence() {
     })
 }
 
+function lightUp() {
+  this.classList.add('light');
+  setTimeout(function(){
+    this.classList.remove('light');
+  }, 500);
+}
+
+function gameOver() {
+  container.classList.add('shake');
+  setTimeout(function(){
+    container.classList.remove('shake');
+  }, 500);
+}
 
 
 });

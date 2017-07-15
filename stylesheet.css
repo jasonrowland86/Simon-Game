@@ -97,30 +97,63 @@ footer {
 .box:hover {
   cursor: pointer;
   opacity: 1.0;
+  transition: .3s;
 /* possibly add an animation */
 }
 .box1 {
   background-color: #FF5EF5;
-  opacity: .6;
+  opacity: .5;
 }
 .box2 {
   background-color: #52E3FF;
-  opacity: .6;
+  opacity: .5;
 }
 .box3 {
   background-color: #E7FF6D;
-  opacity: .6;
+  opacity: .5;
 }
 .box4 {
   background-color: #5EFF76;
-  opacity: .6;
+  opacity: .5;
 }
 
 .light {
-  animation: light .5s linear;
+  animation: light .8s linear;
 }
 
 @keyframes light {
   0% 100%{opacity: .6;}
   50% {opacity: 1;}
+}
+
+@media only screen and (max-width: 500px) {
+  .box {
+    width: 150px;
+    height: 150px;
+  }
+  #wrapper {
+    width: 400px;
+    margin: auto;
+  }
+  #start {
+    display: inline-block;
+    margin: 10px auto;
+    height: 30px;
+    width: 100px;
+    position: relative;
+  }
+  #score {
+    display: inline-block;
+    margin: 10px 20px;
+    height: 30px;
+    width: 100px;
+    position: relative;
+  }
+  #level {
+    display: inline-block;
+    margin: 10px 20px;
+    height: 30px;
+    width: 100px;
+    position: relative;
+  }
 }

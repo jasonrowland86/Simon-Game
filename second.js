@@ -47,6 +47,7 @@ function playGame() {
   document.getElementById('start').innerText = "Reset";
   document.getElementById('start').removeEventListener('click', playGame);
   document.getElementById('start').addEventListener('click', reset);
+  //add a setTimeout only used once to delay the first move
   computerTurn();
 }
 
@@ -91,20 +92,26 @@ function reset() {
   container.innerHTML = '';
   playerArr = [];
   computerArr = [];
+  level = 1;
+  score = 0;
   //possibly set time out to fix reload bug
   createGameBoard();
 }
 
 function animateSequence() {
-  let timeOut = 1250;
-  computerArr.forEach(function(e){
-    let box = document.getElementById(e);
-    box.classList.add('light');
-    setTimeout(function(){
-      box.classList.remove('light');
-      timeOut += 1000;
-    }, timeOut)
-  })
+  let timeOut = 0;
+    computerArr.forEach(function(e){
+      let box = document.getElementById(e);
+      setTimeout(function(){
+        box.classList.add('light');
+      }, timeOut + timeOut)
+      setTimeout(function(){
+        box.classList.remove('light');
+      }, 500);
+      timeOut += 500;
+    })
 }
+
+
 
 });

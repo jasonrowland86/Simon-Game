@@ -82,7 +82,7 @@ function playerMove() {
   } else if(checkPlayerTurn() === false) {
     gameOver(); //animates board to shake
     gameOverSound();
-    document.getElementById('wrapper').innerHTML += '<p id=p>GAME</br>OVER</br><span>FINAL SCORE </span></p>';
+    document.getElementById('wrapper').innerHTML += '<p id=p>GAME</br>OVER</br><span>FINAL SCORE </span></br></p>';
     document.getElementById('score').innerText = '';
     document.getElementById('level').innerText = '';
     document.getElementById('p').innerHTML += `${score}`;

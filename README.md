@@ -1,7 +1,6 @@
 # Simon-Game
 
-The object of the game is to repeat a randomly generated pattern by clicking on
-the same divs shown briefly and then hidden. The pattern complexity should increase and the player will try to accumulate the highest score possible until they fail.
+The object of the game is to repeat a randomly generated pattern by clicking the corresponding tile that lights up and makes a sound. the sequence is increased by 1 each round until the player loses.
 
 ## Technical Discussion
 
@@ -9,21 +8,18 @@ The pieces of the game board will be HTML elements styled with CSS.
 Javascript will be used to handle and store player moves and compare for win.
 As well as interact with the page.
 
-I will use javascript to create the game board.
-When start button is clicked the board will display a random pattern by
-updating the CSS class of a div, this will be set to an interval and then the
-board will be reset for the players turn and add an event listener will be applied
-to all divs. Another set interval will be needed to time the players turn. If
-player turn is correct points are accumulated. This is repeated and the interval
-speed should increase until a player fails (maybe 3 fails) then an outcome is
-alerted and the game is over. Game can be reset with reset button.
+The board is created and updated throughout the game with javascript DOM manipulation.
+A random number is generated that corresponds with a certain div.
+The sequence of divs are animated to light up with a function that adds and removes a class that animates the opacity of a given div from .5 to 1, creating a light up effect.
+Then the playerTurn function is called that waits for the player to repeat the pattern by clicking on each div shown. The players sequence is stored in an array and checked to be correct each time a div is clicked.
+if all are correct the computers turn function is called, another random number is added to the sequence, animated, and the process repeats until the player loses.
+A simple HTML structure was used, I used about 10 javascript functions to run the game, and a few simple CSS animations to add to the player experience.
 
 ### Notes on Game Structure
 
-I think the randomization may be difficult.
+The animation sequence turned out to be the most difficult and I think I could use a better method of setting up each Simon tile and identifying it.
 
 ## Opportunities for Future Growth
 
-I'd like to style this game similarly to my tic tac toe game so that I could later
-combine these two games and possibly a third into on webpage of games to choose
-between.
+I need to finish adding the audio to the animation sequence and the player click. The game logic works but audio is essential to the player experience.
+I would like to speed the game up as it gets harder, or come up with a few more ways to add to the game play and have options instead of the one linear mode that it is currently.

@@ -8,7 +8,7 @@ hr {
 }
 #p {
   font-family: 'Work Sans', sans-serif;
-  font-size: 80px;
+  font-size: 90px;
   text-align: center;
   padding: 10px;
   color: white;
@@ -19,7 +19,7 @@ hr {
   transform: translate(-50%, -50%);
 }
 span {
-  font-size: 50px;
+  font-size: 60px;
 }
 #h1 {
   font-family: 'Work Sans', sans-serif;
@@ -127,6 +127,7 @@ span {
   backface-visibility: hidden;
   perspective: 1000px;
 }
+/*--- Shake animation from css tricks: https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ ---*/
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -145,7 +146,7 @@ span {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .box {
     width: 150px;
     height: 150px;
@@ -189,7 +190,7 @@ span {
     position: relative;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 350px) {
   .box {
     width: 100px;
     height: 100px;
@@ -198,12 +199,12 @@ span {
     width: 200px;
   }
   span {
-    font-size: 30px;
+    font-size: 20px;
   }
   #p {
-    font-size: 50px;
+    font-size: 40px;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
   }

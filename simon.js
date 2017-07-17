@@ -58,6 +58,7 @@ function computerTurn() {
     for(let i=0; i<boxes.length; i++) {
       boxes[i].removeEventListener('click', playerMove);
       boxes[i].removeEventListener('click', lightUp);
+      boxes[i].removeEventListener('click', playSound);
     }
     animateSequence();
     playerTurn();
@@ -67,6 +68,7 @@ function playerTurn() {
   for(let i=0; i<boxes.length; i++) {
     boxes[i].addEventListener('click', playerMove);
     boxes[i].addEventListener('click', lightUp);
+    boxes[i].addEventListener('click', playSound);
   }
 }
 

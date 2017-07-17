@@ -19,7 +19,11 @@ A simple HTML structure was used, I used about 10 javascript functions to run th
 
 The animation sequence turned out to be the most difficult and I think I could use a better method of setting up each Simon tile and identifying it.
 
-## Opportunities for Future Growth
+### User Story
+
+The game is simple. The player presses start and the computer displays the first random sequence by lighting up a square. Then the game waits for the user to repeat the sequence by clicking each square. If correct the computer pattern adds one to the sequence and this is repeated until the player loses.
+
+## Problems to solve
 
 I need to finish adding the audio to the animation sequence and the player click. The game logic works but audio is essential to the player experience.
 I would like to speed the game up as it gets harder, or come up with a few more ways to add to the game play and have options instead of the one linear mode that it is currently.

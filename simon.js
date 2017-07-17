@@ -112,7 +112,7 @@ function reset() {
   //possibly set time out to fix reload bug
   createGameBoard();
 }
-
+//Got some help with this function from a friend.
 function animateSequence() {
   let i=0,
       interval = setInterval(toggleLights, 500);
@@ -130,8 +130,12 @@ function animateSequence() {
           clearInterval(interval);
       }
     }
-  function on(element){ element.classList.add("light"); }
-  function off(element){ element.classList.remove("light"); }
+  function on(element){
+    element.classList.add("light");
+  }
+  function off(element){
+    element.classList.remove("light");
+  }
 }
 
 function lightUp(e) {
@@ -139,10 +143,9 @@ function lightUp(e) {
   setTimeout(function(){
     e.target.classList.remove('light');
   }, 500);
-  //playSound();
 }
 
-//Credit to Dan for showing me how he got his audio to play. This function still isnt working tho.
+//Credit to Dan for showing me how he got his audio to play.
 function playSound(e) {
   if(e.target.id === "simon1"){
     console.log('1');
